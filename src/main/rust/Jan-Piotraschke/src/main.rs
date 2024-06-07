@@ -1,4 +1,3 @@
-use std::time::Instant;
 use std::path::PathBuf;
 use std::fs::File;
 use std::io::{self, Read};
@@ -20,7 +19,7 @@ impl TempAnalysis {
             min: value,
             max: value,
         }
-    }
+    } 
 
     fn update(&mut self, value: f64) {
         self.counter += 1;
@@ -48,9 +47,6 @@ fn read_file_to_string(path: &PathBuf) -> io::Result<String> {
 }
 
 fn main() {
-    // Start the timer
-    let start = Instant::now();
-
     // get the command line arguments
     let args: Vec<String> = std::env::args().collect();
 
@@ -105,8 +101,4 @@ fn main() {
     }).collect();
 
     println!("{{{}}}", formatted_output.join(", "));
-
-    // Stop the timer and print the duration
-    let duration = start.elapsed();
-    println!("Time elapsed: {:?}", duration);
 }
