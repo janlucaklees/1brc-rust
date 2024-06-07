@@ -22,6 +22,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+cargo build --release --manifest-path ./src/main/rust/$1/Cargo.toml
+
 for sample in $(ls src/test/resources/samples/*.txt); do
   echo "Validating calculate_average_$1.sh -- $sample"
 

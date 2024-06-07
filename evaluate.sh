@@ -21,9 +21,7 @@ if [ -z "$1" ]
     exit 1
 fi
 
-java --version
-
-mvn clean verify
+cargo build --release --manifest-path ./src/main/rust/$1/Cargo.toml
 
 rm -f measurements.txt
 ln -s measurements_1B.txt measurements.txt

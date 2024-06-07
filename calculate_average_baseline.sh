@@ -15,4 +15,6 @@
 #  limitations under the License.
 #
 
-time bun run src/main/rust/baseline/main.rs measurements.txt
+# cargo build --release --manifest-path ./src/main/rust/baseline/Cargo.toml
+
+time ./src/main/rust/baseline/target/release/baseline measurements.txt
